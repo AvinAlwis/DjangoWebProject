@@ -1,0 +1,60 @@
+{% extends 'TeaState3/base.html' %}
+{% load materializecss %}
+
+{% block css %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+{% endblock css %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts</title>
+    <metaname="viewport"content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .center {
+          margin: auto;
+          width: 70%;
+          border: 3px solid #73AD21;
+          padding: 10px;
+          text-align: center;
+        }
+        .button{
+            text-align: left;
+        }
+        </style>
+</head>
+<body onload="">
+    <div class="center">
+      <button type="button" class="btn-floating btn-large waves-effect waves-light" style="float: right;" onclick="location.href='{% url 'logout' %}'">Logout</button>
+      <h1 style="float: inline;">Accounts Menu</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type="button" class="waves-effect waves-light btn-large" onclick="location.href='{% url 'dailyteaplucks' %}'">Daily Tea Plucked</button>
+        <button type="button" class="waves-effect waves-light btn-large" onclick="location.href='{% url 'estates' %}'">Estates</button>
+        <br>
+        <br>
+        <button type="button" class="waves-effect waves-light btn-large" onclick="location.href='{% url 'ownerestates' %}'">Owner-Estates</button>
+        <button type="button" class="waves-effect waves-light btn-large" onclick="location.href='{% url 'allowances' %}'">Allowances</button>
+        <button type="button" class="waves-effect waves-light btn-large" onclick="location.href='{% url 'deductions' %}'">Deductions</button>
+        <br>
+        <br>
+        <button type="button" class="waves-effect waves-light btn-large" style="float: left;" onclick="location.href='{% url 'mainmenu' %}'">Back</button>
+        <br>
+        <br>
+        <br>
+      </div>
+</body>
+</html>
+{% endblock content %}

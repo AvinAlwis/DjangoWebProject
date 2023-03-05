@@ -1,0 +1,57 @@
+{% extends 'TeaState3/base.html' %}
+{% load materializecss %}
+
+{% block css %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+{% endblock css %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+    <p>{{request.user}}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}">Login</a>
+{% endif%}
+<hr>
+<h1>My Items</h1>
+<a href="{% url 'item-create' %}" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
+
+<form method="GET">
+    <div class="input-field col s6">
+    <i class="material-icons prefix">search</i>
+    <input id = "icon_prefix" type="text" class = "validate" name="search-area" value="{{search_input}}">
+    <label for="icon_prefix">Search!</label>
+    <input type="submit" value="Search" class="waves-effect waves light btn-small">
+    </div>
+</form>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{item.item_name}}</td>
+        <td><a href="{% url 'item' item.id %}">View</a></td>
+        <td><a href="{% url 'item-update' item.id %}">Edit</a></td>
+        <td><a href="{% url 'item-delete' item.id %}">Delete</a></td>
+    </tr>
+    {% empty %}
+    <h3>No items</h3>
+    {% endfor %}
+</table>
+<a href="{% url 'inventorymenu' %}">Go Back</a>
+{% endblock content %}
+
+{% block scripts %}
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+{% endblock scripts %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Leaf</title>
+    <metaname="viewport"content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .center {
+          margin: auto;
+          width: 70%;
+          border: 3px solid #73AD21;
+          padding: 10px;
+          text-align: center;
+        }
+        .button{
+            text-align: left;
+        }
+        </style>
+</head>
+<body onload="">
+    <div class="center">
+      <button type="button" class="btn btn-success" style="float: right;" onclick="location.href='{% url 'logout' %}'">Logout</button>
+      <h1 style="float: inline;">Green Leaf Menu</h1>
+        <br>
+        <br>
+        <br>
+        <button type="button" class="btn btn-success" onclick="">Weighing Sheet</button>
+        <button type="button" class="btn btn-success" onclick="">Suppliers</button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-success" onclick="">Daily Tea Plucked</button>
+        <br>
+        <button type="button" class="btn btn-success" style="float: left;" onclick="location.href='{% url 'mainmenu' %}'">Back</button>
+      </div>
+</body>
+</html>

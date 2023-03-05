@@ -1,0 +1,16 @@
+<h1>Flexmonster integration with Django</h1>
+<div id="pivotContainer"></div>
+<script src="https://cdn.flexmonster.com/flexmonster.js"></script>
+
+<script>
+    var pivot = new Flexmonster({
+        container: "pivotContainer",
+        componentFolder: "https://cdn.flexmonster.com/",
+        report: {
+            dataSource: {
+                type: "json",
+                filename: "https://cdn.flexmonster.com/data/data.json"
+            }
+        }
+    });
+</script> 

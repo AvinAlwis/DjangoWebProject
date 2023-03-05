@@ -1,0 +1,94 @@
+{% extends 'TeaState3/base.html' %}
+{% load materializecss %}
+
+{% block css %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+{% endblock css %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <metaname="viewport"content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--Chartjs CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <style>
+        .center {
+          margin: auto;
+          width: 70%;
+          border: 3px solid #73AD21;
+          padding: 10px;
+          text-align: center;
+        }
+        .button{
+            text-align: left;
+        }
+        </style>
+</head>
+<body onload="">
+
+    
+    <div class="center">
+        <button type="button" class="btn-floating btn-large waves-effect waves-light" style="float: right; font-size:small" onclick="location.href='{% url 'logout' %}'">Logout</button>
+        <h1 style="float: inline;">Main Menu</h1>
+            <!--Topside-->
+    <div class="container" >
+        <div class="row mt-4" style="align-content: center;">
+            ㅤㅤㅤㅤㅤㅤㅤ
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        Statistics
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark">
+                                    <div class="card my-card shadow text-center p-3">
+                                        <h4>Workers<i class="fas fa-users"></i></h4>
+                                        <h3>{{worker_count}}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark">
+                                    <div class="card my-card shadow text-center p-3">
+                                        <h5>Green Leaf Quantity <i class="fas fa-box"></i></h5>
+                                        <h3>0 kg</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark">
+                                    <div class="card my-card shadow text-center p-3">
+                                        <h4>Items <i class="fas fa-shipping-fast"></i></h4>
+                                        <h3>{{items_count}}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Topside-->
+        <br>
+        <br>
+        <br>
+        <button type="button" class="waves-effect waves-light btn-large" onclick="location.href='{% url 'staffmenu' %}'">Staff</button>
+        <button type="button" class="waves-effect waves-light btn-large" onclick="location.href='{% url 'accountsmenu' %}'"">Accounts</button>
+        <button type="button" class="waves-effect waves-light btn-large" onclick="location.href='{% url 'inventorymenu' %}'"">Inventory</button>
+      </div>
+</body>
+</html>
+{% endblock content %}

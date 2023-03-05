@@ -1,0 +1,31 @@
+{% extends 'TeaState3/base.html' %}
+{% load materializecss %}
+
+{% block css %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+{% endblock css %}
+
+{% block content %}
+<h1>Worker: {{worker}}</h1>
+<a href="{% url 'workers' %}">Go Back</a>
+
+<p>EPF Number: {{worker.epf_number}}</p>
+<p>First Name: {{worker.first_name}}</p>
+<p>Last Name: {{worker.last_name}}</p>
+<p>Gender: {{worker.gender}}</p>
+<p>Phone Number: {{worker.phone_number}}</p>
+<p>Birth Date: {{worker.birth_date}}</p>
+<p>Join Date: {{worker.join_date}}</p>
+<p>Estate ID: {{worker.estate_id}}</p>
+{% endblock content %}
+
+{% block scripts %}
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+{% endblock scripts %}
